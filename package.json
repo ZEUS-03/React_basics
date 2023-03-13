@@ -1,0 +1,35 @@
+{
+  "name": "react_tutorial",
+  "version": "1.0.0",
+  "description": "my first react app",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZEUS-03/React_basics.git"
+  },
+  "keywords": [
+    "will",
+    "be",
+    "added",
+    "soon"
+  ],
+  "author": "gautam sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZEUS-03/React_basics/issues"
+  },
+  "homepage": "https://github.com/ZEUS-03/React_basics#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
