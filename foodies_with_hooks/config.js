@@ -1,40 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-/**
- * App Layout
- * 
- * Header:
- *  - Logo
- *  - Nav links
- *  - cart
- * 
- * Body:
- *  - Search bar
- *  - RestaurantList:
- *    - Card:
- *      - Image
- *      - name
- *      - cuisines
- */
-
-const Header = () => {
-  return (
-    <div className="header-container">
-      <a href="index.html">
-        <img className="logo" alt="logo" src="https://th.bing.com/th/id/OIP.p4Ve--D7nEaiaItSfMCPFQHaE8?pid=ImgDet&rs=1" />
-      </a>
-      <ul>
-        <li>Restaurants</li>
-        <li>Contact us</li>
-        <li>About us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  );
-};
-
-const RestaurantList = [
+export const IMG_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+export const RestaurantList = [
   {
     "info": {
       "id": "129366",
@@ -688,39 +653,3 @@ const RestaurantList = [
       "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT"
     }
   }];
-
-const RestaurantCard = ({name, cuisines, sla, cloudinaryImageId /** restaurant */}) => {
-  // const {name, cuisines, lastMileTravelString, cloudinaryImageId} = restaurant; using restaurant
-  return (
-    <div className="card">
-      <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(" ,")}</h3>
-      <h3>{sla.lastMileTravelString} away</h3>
-    </div>
-  )
-}
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {/* <RestaurantCard name={RestaurantList[0].info.name} cuisines={RestaurantList[0].info.cuisines}/> */}
-      {/* <RestaurantCard {...RestaurantList[0].info}/> */}
-      {RestaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.info}/>
-      })}
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-    </>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
