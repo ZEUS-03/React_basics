@@ -22,3 +22,20 @@
   justify-content: space-between;
 
 }
+
+.card {
+  width: 150px;
+  border: solid 1px black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.card>img {
+  width: 100%;
+  height: auto;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
