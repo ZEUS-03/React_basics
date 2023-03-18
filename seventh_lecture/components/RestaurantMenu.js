@@ -6,7 +6,7 @@ import { IMG_URL } from "../config";
 const RestaurantMenu = () => {
   const { id } = useParams();
 
-  const [restaurant, setRestaurant] = useState({});
+  const [restaurant, setRestaurant] = useState();
 
   useEffect(() => {
     fetchMenu();
