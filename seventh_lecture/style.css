@@ -47,3 +47,15 @@ a {
 .menu-container {
   display: flex;
 }
+
+.shimmer-parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-container {
+  width: 200px;
+  height: 200px;
+  background: lightgray;
+  margin: 20px;
+}

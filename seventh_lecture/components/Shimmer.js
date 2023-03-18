@@ -1,4 +1,12 @@
 const Shimmer = () => {
-  return <h1>Restaurants are loading...</h1>;
+  return (
+    <div className="shimmer-parent">
+      {Array(10)
+        .fill("")
+        .map((e) => (
+          <div className="shimmer-container"></div>
+        ))}
+    </div>
+  );
 };
 export default Shimmer;
