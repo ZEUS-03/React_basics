@@ -1,22 +1,26 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import image from "../assets/images.png";
 
 const Header = () => {
   const [isloggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="header-container">
-      <a href="index.html">
-        <img
-          className="logo"
-          alt="logo"
-          src="https://th.bing.com/th/id/OIP.p4Ve--D7nEaiaItSfMCPFQHaE8?pid=ImgDet&rs=1"
-        />
-      </a>
+      <Link to="/">
+        <img className="logo" alt="logo" src={image} />
+      </Link>
 
       <ul>
-        <li>Restaurants</li>
-        <li>Contact us</li>
-        <li>About us</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/about">About us</Link>
+        </li>
         <li>Cart</li>
       </ul>
       {isloggedIn ? (
