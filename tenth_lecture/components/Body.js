@@ -11,7 +11,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState("");
   const [restaurants, setRestaurant] = useState("");
-  // const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -64,14 +64,15 @@ const Body = () => {
         >
           search
         </button>
-        {/* <input
-          className=" m-2 rounded-sm focus:bg-slate-100 focus:border-orange-300"
+        <input
           value={user.name}
-          placeholder=""
-          onChange={(e) => {
-            setUser({ name: e.target.value, email: "newEmail@gmail.com" });
-          }}
-        ></input> */}
+          onChange={(e) =>
+            setUser({
+              name: e.target.value,
+              email: "newEmail@gmail.com",
+            })
+          }
+        ></input>
       </div>
       <div className="flex flex-wrap justify-between">
         {/* <RestaurantCard name={RestaurantList[0].info.name} cuisines={RestaurantList[0].info.cuisines}/> */}

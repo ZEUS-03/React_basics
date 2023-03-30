@@ -15,17 +15,17 @@ import userContext from "./utils/UserContext";
 const About = lazy(() => import("./components/About"));
 const Instamart = lazy(() => import("./components/Instamart")); //Dynamic import, Lazy loading
 const App = () => {
-  // const [user, setUser] = useState({
-  //   user: "dummyname",
-  //   email: "dummyemail@gmail.com",
-  // });
+  const [user, setUser] = useState({
+    name: "dummyname",
+    email: "dummyemail@gmail.com",
+  });
   return (
     <>
-      {/* <userContext.Provider value={{ user: user, setUser: setUser }}> */}
-      <Header />
-      <Outlet />
-      <Footer />
-      {/* </userContext.Provider> */}
+      <userContext.Provider value={{ user: user, setUser: setUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </userContext.Provider>
     </>
   );
 };
