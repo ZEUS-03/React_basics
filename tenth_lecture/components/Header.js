@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import image from "../assets/images.png";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [isloggedIn, setIsLoggedIn] = useState(false);
   const isOnline = useOnline();
+  const { user } = useContext(UserContext);
+
   return (
     <div className="flex flex-wrap justify-between p-2 bg-orange-200 shadow-md">
       <Link to="/">
@@ -27,6 +30,8 @@ const Header = () => {
           <Link to="/instamart">Instamart</Link>
         </li>
       </ul>
+
+      <h2>{user.name}</h2>
 
       <h3 className="py-4 ">Online status: {isOnline ? "🟢" : "🔴"}</h3>
       {isloggedIn ? (

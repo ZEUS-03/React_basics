@@ -1,15 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
 import { RESTAURANTS_URL } from "../config";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import filterData from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState("");
   const [restaurants, setRestaurant] = useState("");
+  // const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -52,6 +54,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         ></input>
+
         <button
           className="bg-orange-400 px-1 rounded-md hover:bg-orange-300"
           onClick={() => {
@@ -61,6 +64,14 @@ const Body = () => {
         >
           search
         </button>
+        {/* <input
+          className=" m-2 rounded-sm focus:bg-slate-100 focus:border-orange-300"
+          value={user.name}
+          placeholder=""
+          onChange={(e) => {
+            setUser({ name: e.target.value, email: "newEmail@gmail.com" });
+          }}
+        ></input> */}
       </div>
       <div className="flex flex-wrap justify-between">
         {/* <RestaurantCard name={RestaurantList[0].info.name} cuisines={RestaurantList[0].info.cuisines}/> */}
@@ -76,7 +87,7 @@ const Body = () => {
                 to={"restaurant/" + restaurant.info.id}
                 key={restaurant.info.id}
               >
-                <RestaurantCard {...restaurant.info} />
+                <RestaurantCard {...restaurant.info} /*user={user}*/ />
               </Link>
             );
           })

@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { IMG_URL } from "../config";
 import useRestaurants from "../utils/useRestaurant";
